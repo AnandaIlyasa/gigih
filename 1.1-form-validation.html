@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise 1.1</title>
+    <script>
+        function validate() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (email === "" || password === "") {
+                alert("email and password cannot be empty");
+                return false;
+            } else if (password.length < 6) {
+                alert("password is too short");
+                return false;
+            }
+
+            alert("login succesful");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return validate()">
+        <label for="email">Email:</label>
+        <!-- or use required property -->
+        <input type="email" id="email" name="email"><br>
+
+        <label for="password">Password:</label>
+        <!-- or use required property -->
+        <input type="password" id="password" name="password"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
