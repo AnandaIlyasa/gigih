@@ -1,40 +1,23 @@
-function getSongList() {
-    const songList = [
-        { title: "all of the lights", artists: [{ name: "Kanye West"}, { name: "Rihanna"}], duration: 2000 },
-        { title: "Dancin", artists: [{ name: "Aaron Smith"}], duration: 2000 },
-        { title: "Pump It", artists: [{ name: "The Black Eyed Peas"}], duration: 2000 },
-    ];
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(songList);
-        }, 1000);
-    });
-}
+import getSongAPI from "./api.js"
 
-getSongList()
-    .then((songList) => {
-        console.log('My playlist:');
-        for(let i = 0; i < songList.length; i++) {
-            console.log(i+1, songList[i].title)
-        }
+getSongAPI(6)
+    .then((song) => {
+        console.log('Retrieved song title:', song.title);
+        console.log("===============================");
     })
     .catch((error) => {
         console.error('Error:', error);
+        console.log("===============================");
     });
-
-const retrieveSongs = async () => {
-    const songList = await getSongList();
-    console.log("===============================")
-    console.log('My playlist:')
-    for(let i = 0; i < songList.length; i++) {
-        console.log(i+1, songList[i].title)
+    
+const getSong = async () => {
+    try {
+        const song = await getSongAPI(2);
+        console.log('Retrieved song title:', song.title);
+    } catch (error) {
+        console.error('Error:', error);
     }
 }
 
-
-try {
-    retrieveSongs();
-} catch (error) {
-    console.log(error);
-}
+getSong();
   
