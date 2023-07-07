@@ -1,4 +1,4 @@
-export default function getSongAPI(id) {
+function getSongAPI(id) {
     const songList = [
         { title: "all of the lights", artists: [{ name: "Kanye West"}, { name: "Rihanna"}], duration: 2000 },
         { title: "Dancin", artists: [{ name: "Aaron Smith"}], duration: 2000 },
@@ -15,3 +15,5 @@ export default function getSongAPI(id) {
         }, 1000);
     });
 }
+
+module.exports = { getSongAPI };

@@ -1,4 +1,4 @@
-import getSongAPI from "./api.js"
+const { getSongAPI } = require('./api');
 
 getSongAPI(6)
     .then((song) => {
