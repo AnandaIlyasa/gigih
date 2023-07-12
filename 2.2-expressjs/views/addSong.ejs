@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://kit.fontawesome.com/b2cf010054.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="content">
+        <form action="/new" method="post">
+            <h2>Add new song</h2>
+            <input type="text" name="title" placeholder="Song Title" required>
+            <input type="text" name="url" placeholder="URL" required>
+            <label>Separate artists names with comma (,)</label>
+            <input type="text" name="artists" placeholder="Artists" required>
+
+            <label>Choose a playlist </label>
+            <select name="playlist" id="playlist">
+                <% playlists.forEach((playlist)=> { %>
+                    <option value="<%= playlist %>">
+                        <%= playlist %>
+                    </option>
+                    <% }) %>
+            </select>
+
+            <input type="submit" value="Add" class="submit">
+        </form>
+    </div>
+</body>
+
+</html>
