@@ -42,11 +42,6 @@ app.post('/song', (req, res) => {
   res.redirect('/');
 });
 
-app.get('/tes', (req, res) => {
-  const primitive = "ilyas";
-  res.json(primitive);
-})
-
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
