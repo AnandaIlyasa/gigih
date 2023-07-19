@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "mongoose": "^7.3.4"
+  },
+  "name": "3.1-mongo-intro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ilyas",
+  "license": "ISC",
+  "description": ""
+}
