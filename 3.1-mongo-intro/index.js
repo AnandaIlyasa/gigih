@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import migrate from "./dataMigration/migration.js";
+import migrate from "./migration/migration.js";
 
 const dbUrl = "mongodb://localhost:27017/gigih";
 
