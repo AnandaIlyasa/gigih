@@ -27,7 +27,7 @@ export default class SongPlaylistMapRepository {
         if(foundId === -1) {
             throw new Error(`songPlaylistMap with id ${id} is not found`);
         }
-        const newSongPlaylistMap: SongPlaylistMap = new SongPlaylistMap(id, data.name);
+        const newSongPlaylistMap: SongPlaylistMap = new SongPlaylistMap(id, data.songId, data.playlistId);
         this.allSongPlaylistMaps[foundId] = newSongPlaylistMap;
     }
 

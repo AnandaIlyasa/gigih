@@ -21,15 +21,41 @@ const getAllSongs = (req: Request, res: Response) => {
     res.json(allSongs);
 }
 
+const getAllSongsSortedByPlayCountDesc = (req: Request, res: Response) => {
+    const allSortedSongs = songService.getAllSongOrderByPlayCountDesc();
+    res.json(allSortedSongs);
+}
+
+const getAllPlaylist = (req: Request, res: Response) => {
+    const allPlaylists = playlistService.getAllPlaylist();
+    res.json(allPlaylists);
+}
+
+const getAllSongFromPlaylist = (req: Request, res: Response) => {
+    const playlistId = parseInt(req.params.playlistId);
+    const allSongsFromPlaylist = playlistService.getAllSongFromPlaylist(playlistId);
+    res.json(allSongsFromPlaylist);
+}
+
 const addSongToPlaylist = (req: Request, res: Response) => {
     const playlistId = parseInt(req.params.playlistId);
     const songId = parseInt(req.params.songId);
     playlistService.addSongToPlaylist(playlistId, songId);
+    res.status(201).send("request succeed");
+}
+
+const playSong = (req: Request, res: Response) => {
+    const playlistId = parseInt(req.params.playlistId);
+    const songId = parseInt(req.params.songId);
+    playlistService.playSongFromPlaylist(playlistId, songId);
+    res.status(201).send("request succeed");
 }
 
 router.get('/song', getAllSongs)
-router.get('/playlist/:playlistId/song/:songId', addSongToPlaylist)
-router.post('/', createOne)
-router.patch('/:songId', patchOneById)
-router.delete('/:songId', deleteOneById)
-router.get('/sorted/descend/play-count', readAllSortedDescendByPlayCount)
+router.get('/song/sorted-desc/playcount', getAllSongsSortedByPlayCountDesc)
+router.get('/playlist/', getAllPlaylist)
+router.get('/playlist/:playlistId', getAllSongFromPlaylist)
+router.post('/playlist/:playlistId/song/:songId', addSongToPlaylist)
+router.put('/playlist/:playlistId/song/:songId', playSong)
+
+export { router };
