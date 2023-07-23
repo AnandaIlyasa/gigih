@@ -1,21 +1,26 @@
 const videoIds = db.videos.insertMany([
   {
+    embedUrl: `<iframe width="560" height="315" src="https://www.youtube.com/embed/SYTWWUoYUMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
     thumbnailUrl:
       "https://i.ytimg.com/vi/SYTWWUoYUMg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAepl-XL0j-phx8lo4opns1gpPi5g",
   },
   {
+    embedUrl: `<iframe width="560" height="315" src="https://www.youtube.com/embed/SYTWWUoYUMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
     thumbnailUrl:
       "https://i.ytimg.com/vi/upWr18yghsE/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB1AaAAuADigIMCAAQARgPIGUoSjAP&rs=AOn4CLBWfJp5nLBmgBcfo204IWkB1hIkSQ",
   },
   {
+    embedUrl: `<iframe width="560" height="315" src="https://www.youtube.com/embed/SYTWWUoYUMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
     thumbnailUrl:
       "https://i.ytimg.com/vi/-7GQIAm_IHE/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_g6AArgIigIMCAAQARhgIGUoSTAP&rs=AOn4CLAbTeTbLSBDkSKctEW47eU8aBCYbA",
   },
   {
+    embedUrl: `<iframe width="560" height="315" src="https://www.youtube.com/embed/SYTWWUoYUMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
     thumbnailUrl:
       "https://i.ytimg.com/vi/yjeRjf-UICM/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_g6AArgIigIMCAAQARhlIF0oTzAP&rs=AOn4CLCW0gtnIDmyyMRqdnOJ212KzArXZw",
   },
   {
+    embedUrl: `<iframe width="560" height="315" src="https://www.youtube.com/embed/SYTWWUoYUMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
     thumbnailUrl:
       "https://i.ytimg.com/vi/D63yDoKM1FE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCFeCzj5HSvbSuUX0kjj_QBuOMvPg",
   },
@@ -23,34 +28,34 @@ const videoIds = db.videos.insertMany([
 
 db.products.insertMany([
   {
-    productUrl:
+    productLink:
       "https://www.tokopedia.com/unilever/clear-men-anti-dandruff-shampo-anti-ketombe-ice-cool-menthol-660ml",
     title: "Shampo Clear",
     price: 90500,
     videoId: videoIds[0],
   },
   {
-    productUrl:
+    productLink:
       "https://www.tokopedia.com/dettolstore/dettol-cairan-antiseptik-1l",
     title: "Dettol Antiseptik",
     price: 165000,
     videoId: videoIds[0],
   },
   {
-    productUrl: "https://www.tokopedia.com/garudafood/garuda-kacang-kulit",
+    productLink: "https://www.tokopedia.com/garudafood/garuda-kacang-kulit",
     title: "Kacang Garuda",
     price: 36000,
     videoId: videoIds[0],
   },
   {
-    productUrl:
+    productLink:
       "https://www.tokopedia.com/garudafood/gery-saluut-malkist-coklat",
     title: "Gery Snack",
     price: 35200,
     videoId: videoIds[1],
   },
   {
-    productUrl:
+    productLink:
       "https://www.tokopedia.com/mondelez/biskuat-biskuit-coklat-134-4-g-3-pcs?extParam=ivf%3Dfalse%26whid%3D13355454&src=topads",
     title: "Biskuat Snack",
     price: 20000,
