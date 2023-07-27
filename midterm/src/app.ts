@@ -1,5 +1,6 @@
 import express, { Router } from 'express';
 import mongoose, { model } from 'mongoose';
+import migrate from './migration/dataMigration';
 import RootRoute from './routes/rootRoute';
 
 require('dotenv').config();
@@ -16,6 +17,13 @@ const main = async (): Promise<void> => {
     console.log("connected to the database")
   } catch (error) {
     console.log('Error connecting to one datastore: ', error)
+  }
+
+  try {
+    await migrate();
+    console.log("data migration success");
+  } catch (error) {
+    console.log(`error migrating data: ${error}`);
   }
 
   const rootRoute = new RootRoute(app, Router());

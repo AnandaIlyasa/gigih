@@ -7,10 +7,17 @@ export default class ProductController {
         const videoId = req.params.videoId;
         try {
             const foundProducts = await ProductService.readAllByVideoId(videoId);
-            res.status(200).json(foundProducts);
+            const response = foundProducts.map((product) => {
+                return {
+                    productId: product._id,
+                    productLink: product.productLink,
+                    title: product.title,
+                    price: product.price
+                }
+            })
+            res.status(200).json(response);
         } catch (error) {
             res.status(500).send(`can not get all products in video with id ${videoId}: ${error}`);
-            
         }
     }
 }

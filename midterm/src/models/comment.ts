@@ -1,15 +1,11 @@
 export default class Comment {
-    id: string;
     username: string;
     comment: string;
     timestamp: Date;
-    videoId: string;
 
-    constructor(id: string, username: string, comment: string, timestamp: Date, videoId: string) {
-        this.id = id;
+    constructor(username: string, comment: string, timestamp: Date) {
         this.username = username;
         this.comment = comment;
         this.timestamp = timestamp;
-        this.videoId = videoId;
     }
 }

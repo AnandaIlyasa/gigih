@@ -1,15 +1,13 @@
 export default class Product {
-    id: string;
+    _id: string | undefined;
     productLink: string;
     title: string;
     price: number;
-    videoId: string;
     
-    constructor(id: string, productLink: string, title: string, price: number, videoId: string) {
-        this.id = id;
+    constructor(productLink: string, title: string, price: number, _id?: string) {
+        this._id = _id;
         this.productLink = productLink;
         this.title = title;
         this.price = price;
-        this.videoId = videoId;
     }
 }
