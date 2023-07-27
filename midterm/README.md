@@ -271,10 +271,10 @@ OR
 
 # How to run
 
-1. Extract the .zip file of this project or clone the repository
+1. Extract the .zip file of this project or clone the repository and go to the `midterm` folder
 
 ```
-	https://github.com/sir-shalahuddin/midterm.git
+	https://github.com/AnandaIlyasa/gigih
 ```
 
 2. Make sure your MongoDB server is up and running at port `27017`
