@@ -11,7 +11,9 @@ export default class VideoController {
                     thumbnailUrl: video.thumbnailUrl
                 }
             })
-            res.status(200).json(response);
+            res.status(200).json({
+                videos: response
+            });
         } catch (error) {
             res.status(500).send(`can not get all videos: ${error}`);
         }
@@ -28,7 +30,7 @@ export default class VideoController {
             }
             res.status(200).json(response);
         } catch (error) {
-            res.status(500).send(`can not get video with id ${id}: ${error}`);
+            res.status(400).send(`can not get video with id ${id}: ${error}`);
         }
     }
 }

@@ -9,12 +9,13 @@ export default class CommentService {
         return foundComments;
     }
     
-    static async postNewComment(videoId: string, payload: {username: string, comment: string}) {
+    static async postNewComment(videoId: string, payload: {username: string, comment: string}): Promise<Comment> {
         const foundVideo = await VideoRepository.readById(videoId);
         if(foundVideo === undefined) {
             throw new Error(`video with id ${videoId} is not found`);
         }
         const newComment = new Comment(payload.username, payload.comment, new Date());
-        await VideoRepository.addNewComment(videoId, newComment);
+        const postedComment = await VideoRepository.addNewComment(videoId, newComment);
+        return postedComment;
     }
 }

@@ -14,9 +14,11 @@ export default class CommentController {
                     timestamp: comment.timestamp
                 }
             });
-            res.status(200).json(response);
+            res.status(200).json({
+                comments: response
+            });
         } catch (error) {
-            res.status(500).send(`can not get all comments in video with id ${videoId}: ${error}`);
+            res.status(400).send(`can not get all comments in video with id ${videoId}: ${error}`);
         }
     }
 
@@ -38,9 +40,10 @@ export default class CommentController {
         }
         const videoId = req.params.videoId;
         try {
-            await CommentService.postNewComment(videoId, {username, comment});
+            const postedComment = await CommentService.postNewComment(videoId, {username, comment});
             res.status(200).json({
-                status: "success"
+                status: "success",
+                comment: postedComment
             });
         } catch (error) {
             res.status(400).json({

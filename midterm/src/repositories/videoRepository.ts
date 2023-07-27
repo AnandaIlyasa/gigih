@@ -24,10 +24,11 @@ export default class VideoRepository {
         return foundVideo;
     }
 
-    static async addNewComment(id: string, newComment: Comment) {
+    static async addNewComment(id: string, newComment: Comment): Promise<Comment> {
         const foundVideo = await videoSchema.findOne({_id: id});
         foundVideo?.comments.push(newComment);
         await foundVideo?.save();
+        return newComment;
     }
 
     static async deleteById(id: string) {
