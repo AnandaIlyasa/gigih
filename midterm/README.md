@@ -27,7 +27,7 @@ This project uses MongoDB and below is the database schema I used in this projec
 
 # API Structure
 
-![api structure](api-stucture.png)
+![api structure](api-stucture.jpg)
 
 # Endpoint
 
@@ -36,10 +36,10 @@ This project uses MongoDB and below is the database schema I used in this projec
 - Video object
 
 ```
-	{
-		videoId: ObjectId
-		thumbnailUrl: string
-	}
+{
+  videoId: ObjectId
+  thumbnailUrl: string
+}
 ```
 
 **GET /api/videos**
