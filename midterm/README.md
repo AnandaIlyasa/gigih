@@ -27,7 +27,7 @@ This project uses MongoDB and below is the database schema I used in this projec
 
 # API Structure
 
-![api structure](api-stucture.jpg)
+![image](https://github.com/AnandaIlyasa/gigih/assets/71200519/a880dec1-da18-4b36-ab0d-bb387e6be37d)
 
 # Endpoint
 
