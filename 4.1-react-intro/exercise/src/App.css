@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+}
+
+.avatar {
+  text-align: left;
+  padding: 20px;
+  color: #282c34;
+  border: #282c34;
+  background-color: whitesmoke;
+  height: 300px;
+  width: 500px;
+  margin-bottom: 10px;
+}
+
+.avatar img {
+  border-radius: 50%;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
