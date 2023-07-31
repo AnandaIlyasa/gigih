@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: black;
+    overflow: hidden;
+    padding: 1rem;
+    height: 100vh;
+}
+
+.App {
+    display: flex;
+    gap: 1rem;
+    height: 100%;
+}
+
+.playlist-section,
+.song-section {
+    background-color: rgb(37, 37, 37);
+    border-radius: 0.5rem;
+    color: white;
+    padding: 1rem;
+}
+
+.playlist-section {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    gap: 1rem;
+}
+
+.playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playlist-header h2 span {
+    margin-right: 0.5rem;
+}
+
+.playlist-item-container {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.playlist-item-container::-webkit-scrollbar {
+    display: none;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    color: white;
+    background-color: rgb(20, 20, 20);
+    margin-top: 0.3rem;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.playlist-item:hover {
+    background-color: darkslategray;
+    cursor: pointer;
+}
+
+.playlist-item span {
+    margin-right: 1rem;
+}
+
+.playlist-item .song-icon {
+    background-color: whitesmoke;
+}
+
+.song-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.add-song {
+    display: flex;
+    align-items: center;
+    padding: 1ch 2ch;
+    margin-right: 2rem;
+    border-radius: 0.5rem;
+    gap: 1rem;
+    color: black;
+    background-color: springgreen;
+}
+
+.add-song:hover {
+    background-color: palegreen;
+    cursor: pointer;
+}
+
+.song-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.song-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    color: white;
+    gap: 1rem;
+    min-width: 24rem;
+    background-color: rgb(20, 20, 20);
+    border-radius: 0.5rem;
+}
+
+.song-item .fa-play {
+    color: black;
+    background-color: springgreen;
+    padding: 1rem;
+    border-radius: 100%;
+}
+
+.song-info {
+    display: flex;
+    gap: 0.4rem;
+    flex-direction: column;
+}
+
+.song-item:hover {
+    background-color: darkslategray;
+    cursor: pointer;
+}
