@@ -12,7 +12,6 @@ function App() {
       const hashParams = new URLSearchParams(window.location.hash.substring(1));
       const token = hashParams.get("access_token");
       setAccessToken(token);
-      localStorage.setItem("access_token", token);
     }
 
     if (!accessToken) {
