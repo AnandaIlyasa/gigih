@@ -1,35 +1,40 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (apiEndpoint, options) => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+const useFetch = (initialUrl, opt) => {
+  const [data, setData] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [endpoint, setendpoint] = useState(apiEndpoint || "");
+  const [url] = useState(initialUrl || "");
+  const [options] = useState(opt);
 
-  useEffect(() => {
-    if (!endpoint) return;
+  console.log("called");
+
+  const callback = () => {
+    if (!url) return;
 
     const fetchData = async () => {
-      setLoading(true);
+      setIsLoading(true);
       try {
-        const response = await fetch(endpoint, options);
+        const response = await fetch(url, options);
         if (!response.ok) {
           throw new Error(`HTTP error status: ${response.status}`);
         }
         const json = await response.json();
         setData(json);
-        setLoading(false);
+        setIsLoading(false);
         setError(null);
       } catch (error) {
-        setLoading(false);
+        setIsLoading(false);
         setError(error.message);
       }
     };
 
     fetchData();
-  }, [endpoint, options]);
+  };
 
-  return { data, error, loading };
+  useEffect(callback, [options, url]);
+
+  return [data, setData, error, isLoading];
 };
 
 export default useFetch;

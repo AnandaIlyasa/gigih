@@ -1,38 +1,27 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 .main-page {
     background-color: black;
-    overflow: hidden;
     padding: 1rem;
     height: 100vh;
     display: flex;
     gap: 1rem;
 }
 
-.side-nav,
+#side-nav,
 .main-content {
     background-color: rgb(30, 30, 30);
-    border-radius: 0.5rem;
     color: white;
     padding: 1rem;
-    height: 100%;
 }
 
-.side-nav {
+#side-nav {
     display: flex;
     flex-direction: column;
-    min-width: 24vw;
+    width: 24vw;
 }
 
-.side-nav::-webkit-scrollbar {
+#side-nav::-webkit-scrollbar {
     display: none;
 }
-
 
 .nav-home, .playlist-item {
     padding: 1rem;
@@ -41,12 +30,21 @@
     border-radius: 0.3rem;
 }
 
+#nav-drawer {
+    background-color: rgb(30, 30, 30);
+    display: none;
+}
+
+.nav-home span {
+    font-size: xx-large;
+}
+
 .playlist-item {
     align-items: center;
 }
 
 .playlist-item:hover, .nav-home:hover {
-    background-color: darkslategray;
+    background-color: rgb(50, 50, 50);
     cursor: pointer;
 }
 
@@ -57,10 +55,6 @@
 
 .playlist-item img, .nav-home span {
     margin-right: 1rem;
-}
-
-.nav-home span {
-    font-size: xx-large;
 }
 
 .main-content {
@@ -92,7 +86,7 @@
     display: grid;
     gap: 1rem;
     max-height: 85%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
     margin-top: 2rem;
 }
 
@@ -112,7 +106,7 @@
 }
 
 .song-item img {
-    height :10rem;
+    max-height :10rem;
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
 }
@@ -122,10 +116,27 @@
     max-width: 10rem;
     overflow:hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .song-item:hover {
-    background-color: darkslategray;
+    background-color: rgb(50, 50, 50);
     cursor: pointer;
+}
+
+@media all and (max-width: 1000px) {
+    #side-nav {
+        display: none;
+    }
+
+    #nav-drawer {
+        display: block;
+    }
+
+    .main-page {
+        gap: 0;
+    }
+
+    .content-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
