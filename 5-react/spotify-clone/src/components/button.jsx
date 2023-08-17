@@ -3,7 +3,7 @@ export default function Button({label, handleClick, bg="green"}) {
         <button
             onClick={handleClick}
             style={{
-                padding: "1rem 2rem",
+                padding: "0.5rem 2rem",
                 backgroundColor: bg === "green" ? "springgreen" : "salmon",
                 color: "black",
                 fontWeight: "bold",

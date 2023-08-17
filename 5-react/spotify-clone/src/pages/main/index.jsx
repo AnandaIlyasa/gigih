@@ -6,6 +6,7 @@ import Playlists from "./components/playlists";
 import UserLogout from "./components/userLogout";
 import Contents from "./components/contents";
 import SideNavDrawer from "./components/sideNavDrawer";
+import { Text } from "@chakra-ui/react";
 
 export default function Main() {
     const {accessToken} = useContext(AuthContext);
@@ -28,7 +29,7 @@ export default function Main() {
             <div id="side-nav">
                 <div className="nav-home">
                     <span className="fa fa-home"/>
-                    <h3>Home</h3>
+                    <Text fontWeight="bold">Home</Text>
                 </div>
                 <Playlists playlists={playlists} />
             </div>

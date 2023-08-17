@@ -71,23 +71,34 @@
 
 .search {
     font-size: 1rem;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 2rem;
 }
 
-.user-logout {
+#user-logout-full {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
+}
+
+#user-logout-hidden {
+    display: none;
+}
+
+.profile-picture {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    border-radius: 1rem;
 }
 
 .content-container {
     overflow-y: scroll;
     display: grid;
     gap: 1rem;
-    max-height: 85%;
+    max-height: 90%;
     grid-template-columns: repeat(5, 1fr);
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .content-container::-webkit-scrollbar {
@@ -138,5 +149,19 @@
 
     .content-container {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    #user-logout-full {
+        display: none;
+    }
+
+    #user-logout-hidden {
+        display: inline;
+    }
+}
+
+@media all and (max-width: 670px) {
+    .content-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

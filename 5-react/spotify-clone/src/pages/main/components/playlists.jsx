@@ -6,7 +6,7 @@ export default function Playlists({ playlists }) {
             {playlists?.items?.map(playlistItem => (
                 <li key={playlistItem.id} className="playlist-item">
                     <img src={playlistItem.images[0]?.url} alt="" />
-                    <Text noOfLines={1}>{playlistItem.name}</Text>
+                    <Text noOfLines={1} fontWeight="bold">{playlistItem.name}</Text>
                 </li>
             ))}
         </ul>

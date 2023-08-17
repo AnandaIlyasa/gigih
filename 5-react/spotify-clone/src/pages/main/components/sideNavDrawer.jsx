@@ -1,12 +1,13 @@
 import {
-    Drawer,
-    DrawerBody,
-    DrawerHeader,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
-    useDisclosure,
-    Button,
+  Text,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  useDisclosure,
+  Button,
 } from '@chakra-ui/react';
 import { ArrowLeftIcon, HamburgerIcon } from '@chakra-ui/icons'
 import { useRef } from 'react';
@@ -38,7 +39,7 @@ export default function SideNavDrawer({ playlists }) {
             <DrawerBody>
                 <div className="nav-home" onClick={onClose}>
                     <span className="fa fa-home"/>
-                    <h3>Home</h3>
+                    <Text fontWeight="bold">Home</Text>
                 </div>
                 <Playlists playlists={playlists} />
             </DrawerBody>
